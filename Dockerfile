@@ -4,6 +4,7 @@ COPY package.json .
 COPY UScities.json .
 RUN npm install &&\
     apk update &&\
-    apk upgrade
+    apk upgrade &&\
+    apt install -y zlib-1.3.dfsg-3
 EXPOSE  4000
 CMD node graphserver.js
